@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let obj = {
+      name: '张三'
+    }
+    let temp = obj.name
+    Object.defineProperty(obj, 'name', {
+      configurable: true, // 表示属性可配置
+      enumerable: false, // 表示属性可遍历
+      // writable: false, // 表示属性只读
+      get() {
+        console.log('属性读取了')
+        return temp
+      },
+      set(newVal) {
+        console.log('属性修改了')
+        temp = newVal
+      }
+    })
+
+    obj.name = '123'
+    
+    console.log(obj.name)
+
+    // for(var key in obj) {
+    //   console.log(obj[key])
+    // }
+
+    
+  </script>
+</body>
+</html>

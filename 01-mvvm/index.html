@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div v-on:click='handleClick'>{{obj.msg}}测试</div>
+    <p v-text='obj.msg'></p>
+    <div v-html='html' v-on:click='handleClick'></div>
+    <input type="text" v-model='obj.msg'>
+  </div>
+</body>
+</html>
