@@ -12,7 +12,7 @@ const app = createApp(App);
 app.use(
   {
     install(app, options) {
-      console.log(app, options);
+      // console.log(app, options);
     },
   },
   {
