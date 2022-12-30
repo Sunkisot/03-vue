@@ -16,17 +16,12 @@ import {
   shallowReadonly,
 } from "vue";
 
-const state = ref(0);
-
-const stop = watchEffect((clean) => {
-  console.log(state, "1");
-  clean(() => {
-    console.log("清理副作用");
-  });
+const state = shallowReactive({
+  a: {
+    b: ref(0),
+  },
 });
-setInterval(() => {
-  stop();
-}, 1000);
+console.log(state.a.b.value);
 /**
  * ref、reactive和readonly
  * 1. setup是在created钩子之前 所有在setup中去改数据 看不出来数据是否是响应式的
